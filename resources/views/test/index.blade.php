@@ -7,11 +7,11 @@
 </head>
 <body>
     <h1>Atapol Jitrukmun</h1>
-    <a href = "{{url('gallery/ant')}}" >
+    <a href = "{{url('newgallery/ant')}}" >
     <img src= {{$ant}} width="200" height="200"> </a>
-    <a href = "{{url('gallery/bird')}}" >
+    <a href = "{{url('newgallery/bird')}}" >
     <img src= {{$bird}} width="200" height="200"></a>
-    <a href = "{{url('gallery/cat')}}" >
+    <a href = "{{url('newgallery/cat')}}" >
     <img src= {{$cat}} width="200" height="200"> </a>
     <img src= {{$god}} width="200" height="200"> 
     <img src= {{$spider}} width="200" height="200"> 

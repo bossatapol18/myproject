@@ -45,6 +45,36 @@ class MyProfileController extends Controller
         return view("myprofile/show" , compact('profile','others') );
     }
 
+    public function gallery ()
+    {
+        $ant = url("images/ant.jpg");
+        $bird = url("images/bird.jpg");
+        $cat = url("images/cat.jpg");
+        $god = url("images/god.jpg");
+        $spider = url("images/spider.jpg");
+
+        return  view("test/index", compact("ant","bird","cat","god","spider") );
+    }
+
+    public function ant ()
+    {
+        $ant = url("images/ant.jpg");
+    
+
+        return  view("test/index1", compact("ant") );
+
+    }
+
+    public function bird ()
+    {
+        $bird = url("images/bird.jpg");
+
+        return  view("test/index2", compact("bird") );
+
+    }
+
+
+
 
      
 }
