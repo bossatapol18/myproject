@@ -50,6 +50,8 @@ $last_name = 'Mars';
 return view('greeting', compact('name','last_name') );
 });
 
+//Quiz1
+
 Route::get( "/gallery" , function(){
 $ant = url("images/ant.jpg");
 $bird = url("images/bird.jpg");
@@ -86,7 +88,39 @@ Route::get("/myprofile/{id}/edit", "MyProfileController@edit");
 
 Route::get("/myprofile/{id}", "MyProfileController@show");
 
+//Quiz2
+
 Route::get( "/newgallery" , "MyProfileController@gallery" );
 Route::get( "/newgallery/ant" , "MyProfileController@ant" );
 Route::get( "/newgallery/bird" , "MyProfileController@bird" );
+
+Route::get( "/coronavirus" , "MyProfileController@coronavirus" );
+
+//Boostrap
+
+Route::get("/teacher" , function (){
+	return view("teacher/index");
+});
+
+Route::get("/student" , function (){
+	return view("student/index");
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+ 
+Route::get('/', function () {
+    return view('table');
+});
+
+
      
