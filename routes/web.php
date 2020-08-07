@@ -122,5 +122,8 @@ Route::get('/', function () {
     return view('table');
 });
 
+Route::get('/covid19', 'Covid19Controller@index');
+
+
 
      
