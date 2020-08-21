@@ -122,9 +122,10 @@ Route::get('/', function () {
     return view('table');
 });
 
-//การสร้าง
+//การสร้าง รวม Routes โดยใช้ resource
 Route::resource('/covid19','Covid19Controller');
 
+//แยก Routes 
 /*Route::get('/covid19', 'Covid19Controller@index');
 Route::get('/covid19/create', 'Covid19Controller@create');
 Route::post('/covid19', 'Covid19Controller@store');
