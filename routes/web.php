@@ -134,6 +134,10 @@ Route::patch("/covid19/{id}", "Covid19Controller@update");
 Route::delete('/covid19/{id}', 'Covid19Controller@destroy');*/
 
 
+Route::resource('/staffs','StaffsController');
+
+ //Route::get('/staffs', 'staffsController@index');
+
 
 
 
