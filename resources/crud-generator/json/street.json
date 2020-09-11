@@ -1,0 +1,34 @@
+{
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "content",
+            "type": "text"
+        },       
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "street",
+            "type": "string"
+        },
+        {
+            "name": "city",
+            "type": "string"
+        }, 
+        {
+            "name": "state",
+            "type": "string"
+        }, 
+        {
+            "name": "zip_code",
+            "type": "integer"
+        }
+
+    ]
+ }
+ 

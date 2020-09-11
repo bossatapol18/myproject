@@ -138,13 +138,9 @@ Route::delete('/covid19/{id}', 'Covid19Controller@destroy');*/
 Route::resource('/staffs','StaffsController');
 
  //Route::get('/staffs', 'staffsController@index');
+ 
 
-
-
-
-
-
-
-
-
-     
+Auth::routes();    
+Route::resource('post', 'PostController');
+Route::resource('book', 'BookController');
+Route::resource('street', 'streetController');
