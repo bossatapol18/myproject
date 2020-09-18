@@ -15,9 +15,9 @@ Route::get('/', function () {
 return view('welcome');
 });
 
-Route::get("/home", function() {
-return "<h1>This is home page</h1>" ;
-});
+//Route::get("/home", function() {
+//return "<h1>This is home page</h1>" ;
+//});
 
 Route::get("/blog/{id}", function($id) {
 return "<h1>This is blog page : {$id} </h1>" ;
@@ -98,6 +98,24 @@ Route::get( "/coronavirus" , "MyProfileController@coronavirus" );
 
 //Boostrap
 
+// Middleware
+Route::middleware(['auth', 'role:admin,teacher'])
+->group(function () {
+	Route::get('/covid19', 'Covid19Controller@index');
+	Route::get('/covid19/{id}', 'Covid19Controller@show');
+});
+
+Route::middleware(['auth', 'role:admin'])
+->group(function () {
+	Route::get('/covid19/create', 'Covid19Controller@create');
+	Route::post('/covid19', 'Covid19Controller@store');
+	Route::get('/covid19/{id}/edit', 'Covid19Controller@edit');
+	Route::put('/covid19/{id}', 'Covid19Controller@update');
+	Route::delete('/covid19/{id}', 'Covid19Controller@destroy');
+});
+// Middleware
+	
+
 Route::get("/teacher" , function (){
 	return view("teacher/index");
 });
@@ -118,12 +136,12 @@ Route::get("/student" , function (){
 |
 */
  
-Route::get('/', function () {
-    return view('table');
-});
+// Route::get('/', function () {
+//     return view('table');
+// });
 
 //การสร้าง รวม Routes โดยใช้ resource
-Route::resource('/covid19','Covid19Controller');
+//Route::resource('/covid19','Covid19Controller');
 
 //แยก Routes 
 /*Route::get('/covid19', 'Covid19Controller@index');
@@ -144,3 +162,6 @@ Auth::routes();
 Route::resource('post', 'PostController');
 Route::resource('book', 'BookController');
 Route::resource('street', 'streetController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
