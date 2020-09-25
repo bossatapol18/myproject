@@ -165,3 +165,10 @@ Route::resource('street', 'streetController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::resource('proflie', 'proflieController');
+//Route::resource('vehicles', 'vehiclesController');
+Route::resource('users', 'usersController');
+//Route::resource('profile', 'profileController');
+Route::resource('profile', 'profileController');
+Route::resource('vehicles', 'vehiclesController');
