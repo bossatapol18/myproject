@@ -172,3 +172,15 @@ Route::resource('users', 'usersController');
 //Route::resource('profile', 'profileController');
 Route::resource('profile', 'profileController');
 Route::resource('vehicles', 'vehiclesController');
+
+//shop online
+Route::resource('order', 'OrderController');
+Route::resource('payment', 'PaymentController');
+Route::resource('order-product', 'OrderProductController');
+Route::resource('product', 'ProductController');
+Route::middleware(['auth'])->group(function () {
+    Route::resource('order', 'OrderController');
+    Route::resource('payment', 'PaymentController');
+    Route::resource('order-product', 'OrderProductController');
+});
+
