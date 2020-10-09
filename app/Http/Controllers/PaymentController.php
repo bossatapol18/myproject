@@ -45,6 +45,7 @@ class PaymentController extends Controller
         $order_id  = $request->get('order_id');
         //query order จาก db ด้วย order_id ถ้าไม่มี order แสดง Not found
         $order = Order::findOrFail($order_id);
+        
 
         return view('payment.create', compact('order'));
     }

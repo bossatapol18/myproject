@@ -174,6 +174,7 @@ Route::resource('profile', 'profileController');
 Route::resource('vehicles', 'vehiclesController');
 
 //shop online
+Route::get('/product/pdf', 'ProductController@pdf_index');
 Route::resource('order', 'OrderController');
 Route::resource('payment', 'PaymentController');
 Route::resource('order-product', 'OrderProductController');
@@ -181,6 +182,8 @@ Route::resource('product', 'ProductController');
 Route::middleware(['auth'])->group(function () {
     Route::resource('order', 'OrderController');
     Route::resource('payment', 'PaymentController');
-    Route::resource('order-product', 'OrderProductController');
+	Route::resource('order-product', 'OrderProductController');
+	//Report
+	
 });
 
